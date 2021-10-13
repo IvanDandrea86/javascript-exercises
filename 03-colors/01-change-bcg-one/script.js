@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  
+
+    const ChangeColor = color => {
+        document.body.style.background = color;
+};
+
+Array.from(document.querySelectorAll("button")).forEach($btn =>
+    $btn.addEventListener(
+        "click",
+        () => (ChangeColor($btn.id), false),
+    ),
+);
+    
 })();
