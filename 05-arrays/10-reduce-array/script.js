@@ -88,5 +88,15 @@
         },
     ];
 
+    document.getElementById('run').addEventListener("click",()=>{
+
+   
+    const summary= people.reduce((acc, person)=>{
+        return acc + person.age;
+    },0)
+    console.log(summary)
+    
+})
+
     // your code here
 })();

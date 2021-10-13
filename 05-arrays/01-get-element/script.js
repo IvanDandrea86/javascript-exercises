@@ -24,6 +24,11 @@
         "raisin",
         "cerise",
     ];
+    document.getElementById("run").addEventListener("click",()=>{
+
+        alert(fruits[3])
+    })
+  
 
     // your code here
 })();

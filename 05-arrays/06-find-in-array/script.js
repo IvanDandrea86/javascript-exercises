@@ -87,6 +87,11 @@
             email: "gkeatche@google.fr",
         },
     ];
+    for(i=0;i<people.length;i++){
+        if(((people[i].lastname) == "Dupont")&&(people[i].firstname == "Jean")) {
+            console.log(people[i].lastname +" "+people[i].firstname+" is number "+i);
+    }
+}
 
     // your code here
 })();

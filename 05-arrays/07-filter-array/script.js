@@ -88,5 +88,21 @@
         },
     ];
 
+    /*-------------
+    Fast version
+    -----------*/
+    const major =people.filter(people=>people.age > 18)
+     /*-------------
+    Slow Version :(
+    -----------*/
+    // var major=new Array();
+    // for(i=0;i<people.length;i++){
+    // if (people[i].age > 18){
+    //     major.push(people[i])
+    // }
+    // }
+    // major.forEach((major)=>console.log(major))
+    console.log(major);
+
     // your code here
 })();

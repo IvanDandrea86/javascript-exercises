@@ -24,6 +24,15 @@
         "raisin",
         "cerise",
     ];
+    var found = fruits.find(element => element ="pomme");
+    
+    if (found="pomme"){
+        console.log("Yes there is")
+    }
+    else{
+        console.log("No there isn't")
+    }
+
 
     // your code here
 })();

@@ -23,10 +23,6 @@
         const year= document.getElementById("dob-year").value;
         
         alert("Your age is "+ calculate_age(new Date(year, month, day)));
-
-
-
-
     })
   
 })();

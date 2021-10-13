@@ -26,6 +26,15 @@
         "raisin",
         "cerise",
     ];
-
-    // your code here
+    document.getElementById('run').addEventListener("click", () => {
+        const uniqueArray = fruits.filter(function (item, pos) {
+            return fruits.indexOf(item) == pos;
+        })
+        console.log(uniqueArray)
+    })
+    /* Basically, we iterate over the array and, 
+    for each element, check if the first position of this 
+    element in the array is equal to the current position. 
+    Obviously, these two positions are different for
+     duplicate elements.*/
 })();

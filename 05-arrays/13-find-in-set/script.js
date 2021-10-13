@@ -22,5 +22,14 @@
         "Lucas",
     ]);
 
+    document.getElementById('run').addEventListener("click", () => {
+               
+        console.log(people.size )
+            if (people.has("Alexandre") ==true){
+                console.log("Alexandere is there")
+    }
+
+    })
+
     // your code here
 })();
