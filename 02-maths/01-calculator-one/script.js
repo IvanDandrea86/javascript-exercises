@@ -10,21 +10,27 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
-
     document.getElementById("addition").addEventListener("click", () => {
-        // perform an addition
+        let x= document.getElementById("op-one").value;
+        let y= document.getElementById("op-two").value;
+        alert("The result is : " + (Number(x)+Number(y)))
     });
 
     document.getElementById("substraction").addEventListener("click", () => {
-        // perform an substraction
+        let x= document.getElementById("op-one").value;
+        let y= document.getElementById("op-two").value;
+        alert("The result is : "+(Number(x)-Number(y)))
     });
 
     document.getElementById("multiplication").addEventListener("click", () => {
-        // perform an multiplication
+        let x= document.getElementById("op-one").value;
+        let y= document.getElementById("op-two").value;
+        alert("The result is : "+(Number(x)*Number(y)))
     });
 
     document.getElementById("division").addEventListener("click", () => {
-        // perform an division
+        let x= document.getElementById("op-one").value;
+        let y= document.getElementById("op-two").value;
+        alert("The result is : "+(Number(x)/Number(y)))
     });
 })();

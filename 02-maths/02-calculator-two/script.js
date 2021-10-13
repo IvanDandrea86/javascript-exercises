@@ -10,10 +10,37 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
-
+    
     const performOperation = operation => {
-        // perform the operation
+        switch(operation){
+            case "addition" : {
+                var x=document.getElementById("op-one").value
+                var y=document.getElementById("op-two").value
+                alert("The result is : " + (Number(x)+Number(y)));
+                break;
+            }
+            
+            
+            case "substraction" : {
+                var x=document.getElementById("op-one").value
+                var y=document.getElementById("op-two").value
+                alert("The result is : " + (Number(x)-Number(y)));
+                break;
+            }
+            case "multiplication" :{
+                var x=document.getElementById("op-one").value
+                var y=document.getElementById("op-two").value
+                alert("The result is : " + (Number(x)*Number(y)));
+                break;
+            }
+            case "division" : {
+                var x=document.getElementById("op-one").value
+                var y=document.getElementById("op-two").value
+                alert("The result is : " + (Number(x)/Number(y)));
+                break;
+            }
+
+        }
     };
 
     Array.from(document.querySelectorAll("button.operator")).forEach($btn =>
