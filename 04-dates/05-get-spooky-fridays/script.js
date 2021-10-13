@@ -10,5 +10,24 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+    const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var array=new Array();
+
+
+
+    document.getElementById("run").addEventListener("click",()=>{
+        var year=document.getElementById("year").value;
+        
+        for (i=0; i<12;i++){
+            var d = new Date();
+            d.setFullYear(year,i,13);
+            var w= weekday[d.getDay()];
+            if (w ==="Wed"){
+                array.push(monthNames[i]);
+            }
+        }
+        alert(array)
+    })
 })();
