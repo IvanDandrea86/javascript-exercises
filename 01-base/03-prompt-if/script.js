@@ -10,5 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var answare= prompt("Did you want a piece of cake ?");
+    // added a case sensitive control on the yes answare
+    if (answare.toLocaleLowerCase() === "yes"){
+        alert ("No proble! Take your piece...");
+    }
+        else alert ("You can't refuse a piece of cake!");
+    
 })();
