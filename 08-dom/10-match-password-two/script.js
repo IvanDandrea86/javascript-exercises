@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        var p1 = document.getElementById("pass-one").value
+        var p2 = document.getElementById("pass-two").value
+        if (p1 != p2) {
+            const inputs = document.querySelectorAll(".field input")
+            inputs.forEach(i => {
+                var att = document.createAttribute("class");
+                att.value = "error";
+                i.setAttributeNode(att);
+
+            })
+        }
+    })
 })();

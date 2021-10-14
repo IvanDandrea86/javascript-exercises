@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var img = document.getElementById("source")
+    img_link = img.getAttribute("data-image")
+    console.log(img_link)
+    var img_tag = document.createElement('img')
+    document.getElementById("target").appendChild(img_tag)
+    var select_image = document.querySelector("img")
+    select_image.src = img_link
+    var myobj = document.getElementById("source");
+    myobj.remove();
+
 })();

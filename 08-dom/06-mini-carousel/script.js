@@ -17,6 +17,16 @@
         "../../_shared/img/lemon.svg",
         "../../_shared/img/map.svg",
     ];
+    var cont = 1;
+    document.getElementById("next").addEventListener("click", () => {
+        var item = document.querySelector(".material  img")
 
-    // your code here
+        item.setAttribute("src", gallery[cont])
+        cont++;
+        if (cont > 4) {
+            cont = 0
+        }
+
+
+    })
 })();

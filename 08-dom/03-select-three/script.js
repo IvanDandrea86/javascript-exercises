@@ -10,5 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    const titles = document.getElementsByClassName("target");
+
+    Array.from(titles).forEach(function(elem) {
+            elem.innerHTML = "Got it!"
+        })
+        /*-----------
+            For cicle
+        -------------*/
+        // for (i = 0; i < titles.length; i++) {
+        //     console.log(i)
+        //     document.getElementsByClassName("target")[i].innerHTML = "something";
+        // }
+
+
+
+
 })();

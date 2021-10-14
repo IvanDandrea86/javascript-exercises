@@ -10,8 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-    const people = [
-        {
+    const people = [{
             firstname: "Bradford",
             lastname: "Coldbath",
             email: "bcoldbath0@wired.com",
@@ -87,11 +86,11 @@
             email: "gkeatche@google.fr",
         },
     ];
-    for(i=0;i<people.length;i++){
-        if(((people[i].lastname) == "Dupont")&&(people[i].firstname == "Jean")) {
-            console.log(people[i].lastname +" "+people[i].firstname+" is number "+i);
+    for (i = 0; i < people.length; i++) {
+        if (((people[i].lastname) == "Dupont") && (people[i].firstname == "Jean")) {
+            console.log(people[i].email + " " + people[i].lastname + " " + people[i].firstname + " is number " + i);
+        }
     }
-}
 
     // your code here
 })();

@@ -23,12 +23,12 @@
             const parts = val.split(' ');
             this.firstname = parts[0];
             this.lastname = parts[1];
-
         }
     }
     document.getElementById("run").addEventListener("click", () => {
 
         let p = new Person("Ivan", "Caro")
+        console.log(p.fullName)
         p.fullName = "Ivan Manzo"
         console.log(p.fullName)
 

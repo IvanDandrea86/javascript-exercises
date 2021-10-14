@@ -10,5 +10,16 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    function hasNumber(myString) {
+        return /\d/.test(myString);
+    }
+    var count = 1;
+    var elem = document.getElementById("pass-one")
+    elem.addEventListener("keypress", () => {
+
+        count++;
+        if ((count > 8) && ((hasNumber(elem.value)))) {
+            document.getElementById("validity").innerHTML = ("ok")
+        }
+    })
 })();

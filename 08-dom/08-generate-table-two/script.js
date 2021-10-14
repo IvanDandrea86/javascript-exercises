@@ -10,5 +10,27 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var trg = document.getElementById("target")
+    var thead = document.createElement('table')
+    var tbody = document.createElement("tbody")
+    trg.appendChild(thead)
+    thead.appendChild(tbody)
+        // Creating and adding data to first row of the table
+    for (y = 1; y <= 10; y++) {
+        let row = document.createElement('tr');
+        for (i = 1; i <= 10; i++) {
+            var cell = document.createElement('td');
+            /*------------
+            Text node Method
+            --------------*/
+            // var cellText = document.createTextNode;
+            // cell.appendChild(cellText);
+            cell.innerHTML = (i * y)
+            row.appendChild(cell);
+        }
+        //row added to end of table body
+        tbody.appendChild(row);
+    }
+
+
 })();

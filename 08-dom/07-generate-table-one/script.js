@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var trg = document.getElementById("target")
+    var thead = document.createElement('table')
+    trg.appendChild(thead)
+        // Creating and adding data to first row of the table
+    let row_1 = document.createElement('tr');
+    let heading_1 = document.createElement('th');
+    heading_1.innerHTML = "Header"
+    row_1.appendChild(heading_1);
+    thead.appendChild(row_1);
+    for (i = 0; i < 10; i++) {
+        let row_2 = document.createElement('tr');
+        let row_2_data_1 = document.createElement('td');
+        row_2_data_1.innerHTML = "row-" + (i + 1)
+        row_2.appendChild(row_2_data_1);
+        thead.appendChild(row_2);
+    }
 })();

@@ -10,5 +10,52 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+
+    document.getElementById("run").addEventListener("click", () => {
+            var p1 = document.getElementById("pass-one").value
+            var p2 = document.getElementById("pass-two").value
+            if (p1 === p2) {
+                const inputs = document.querySelectorAll(".field input")
+                inputs.forEach(i => {
+                    var att = document.createAttribute("style");
+                    att.value = "border-color:green; color:green;";
+                    i.setAttributeNode(att);
+                })
+
+                /*----------------
+                Long stupid version
+                ------------*/
+                // let result = document.getElementById("pass-one")
+                // var att = document.createAttribute("style");
+                // att.value = "border-color:green; background-color:green;";
+                // result.setAttributeNode(att);
+                // let result2 = document.getElementById("pass-two")
+                // var att2 = document.createAttribute("style");
+                // att2.value = "border-color:green; background-color:green;";
+                // result2.setAttributeNode(att2);
+            } else {
+                const inputs = document.querySelectorAll(".field input")
+                inputs.forEach(i => {
+                    var att = document.createAttribute("style");
+                    att.value = "border-color:red; color:red;";
+                    i.setAttributeNode(att);
+                })
+
+
+                /*----------------
+                    Long stupid version
+                    ------------*/
+                // let result = document.getElementById("pass-one")
+                // var att = document.createAttribute("style");
+                // att.value = "border-color:red; background-color:red;";
+                // result.setAttributeNode(att);
+                // let result2 = document.getElementById("pass-two")
+                // var att2 = document.createAttribute("style");
+                // att2.value = "border-color:red; background-color:red;";
+                // result2.setAttributeNode(att2);
+
+            }
+        })
+        // your code here
 })();

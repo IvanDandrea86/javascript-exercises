@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var count = 1;
+    var elem = document.getElementById("pass-one")
+    elem.addEventListener("keypress", () => {
+        document.getElementById("counter").innerHTML = (count + "/10")
+        count++;
+        if (count > 10) {
+            var att = document.createAttribute("disabled");
+            elem.setAttributeNode(att);
+        }
+    })
+
 })();
