@@ -20,18 +20,31 @@
         document.querySelectorAll("span")
     }
     var spans = document.querySelectorAll("span")
-    var x = 12;
+    var val = 8;
+    var increse=8
+    var min=8;
+    var max=48;
+
     spans.forEach(elem => {
         var att = document.createAttribute("style");
-        att.value = "font-size:" + x + "px";
+        att.value = "font-size:" + +val + "px";
         elem.setAttributeNode(att);
-        if (x > 42) {
-            x = x - 4
-        } else {
-            x = x + 4;
+        val=val+increse
+        console.log(val)
+        if (val >max){
+                temp=val
+            while(temp>max){
+                var att = document.createAttribute("style");
+                att.value = "font-size:" + +val + "px";
+                elem.setAttributeNode(att);
+                console.log(val)
+                val=val-increse
+                if (val<min){
+                    temp=max-1
+                }
+            }
         }
-        console.log(x)
-
+        
     })
-    console.log(spans)
+    
 })();
