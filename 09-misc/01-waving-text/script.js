@@ -10,41 +10,58 @@
 // You will have time to focus on it later.
 
 (() => {
+
+    function waveText(spans, max_const, min, increse) {
+        let max = (min + increse) * max_const
+
+        let val = min
+        spans.forEach(elem => {
+            let check = false
+            if (val <= max) {
+                addAttribute(elem, "style", ("font-size:" + val + "px"))
+                val += increse
+            } else {
+                while (check === false)
+                    if (val > min) {
+                        addAttribute(elem, "style", ("font-size:" + val + "px"))
+                        val -= increse
+                    } else { check = true }
+            }
+        })
+    }
+
+    function addClass(target, _className) {
+        target.forEach(elem => {
+            elem.classList.add(_className)
+        })
+    }
+
+    function addAttribute(elem, attribute, val) {
+        var att = document.createAttribute(attribute);
+        att.value = val;
+        elem.setAttributeNode(att);
+    }
+
+    function addId(target, idName) {
+        target.forEach(function(elem, i) {
+            var att = document.createAttribute("id");
+            att.value = (idName + "-" + i);
+            elem.setAttributeNode(att);
+        })
+    }
+    /* --------
+    Transfor p in span for each character
+    -----------*/
     const text = document.getElementById("target")
     const strText = text.textContent;
     var i = 10;
     const array = Array.from(strText)
     text.innerHTML = " "
     for (let i = 0; i < array.length; i++) {
-        text.innerHTML += "<span>" + array[i] + "</span>"
-        document.querySelectorAll("span")
+        text.innerHTML += "<span>" + (array[i].toLowerCase()) + "</span>"
     }
-    var spans = document.querySelectorAll("span")
-    var val = 8;
-    var increse=8
-    var min=8;
-    var max=48;
-
-    spans.forEach(elem => {
-        var att = document.createAttribute("style");
-        att.value = "font-size:" + +val + "px";
-        elem.setAttributeNode(att);
-        val=val+increse
-        console.log(val)
-        if (val >max){
-                temp=val
-            while(temp>max){
-                var att = document.createAttribute("style");
-                att.value = "font-size:" + +val + "px";
-                elem.setAttributeNode(att);
-                console.log(val)
-                val=val-increse
-                if (val<min){
-                    temp=max-1
-                }
-            }
-        }
-        
-    })
-    
+    const spans_ele = document.querySelectorAll(".material span")
+    waveText(spans_ele, 5, 16, 8);
+    addId(spans_ele, "char")
+    addClass(spans_ele, "char")
 })();
