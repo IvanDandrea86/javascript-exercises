@@ -13,7 +13,6 @@
 
     function waveText(spans, max_const, min, increse) {
         let max = (min + increse) * max_const
-
         let val = min
         spans.forEach(elem => {
             let check = false
@@ -61,7 +60,25 @@
         text.innerHTML += "<span>" + (array[i].toLowerCase()) + "</span>"
     }
     const spans_ele = document.querySelectorAll(".material span")
+
     waveText(spans_ele, 5, 16, 8);
-    addId(spans_ele, "char")
-    addClass(spans_ele, "char")
+
+    // var j
+    // while (j < 1000) {
+    //     for (let i = 0; i < spans_ele.length; i++) {
+    //         let temp = spans_ele[i]
+    //         spans_ele[i] = spans_ele[i + 1]
+    //     }
+    //     j++
+    // }
+    // spans_ele.forEach(elem => {
+    //     addAttribute(elem, "style", "font-size: 12px")
+    // })
+    // spans_ele.forEach(elem => {
+    //     addAttribute(elem, "style", "font-size: 16px")
+    // })
+
+    // waveText(spans_ele, 5, 16, 8);
+    // addId(spans_ele, "char")
+    // addClass(spans_ele, "char")
 })();

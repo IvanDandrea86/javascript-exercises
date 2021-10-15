@@ -10,16 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    function hasNumber(myString) {
-        return /\d/.test(myString);
+    function hasNumbertwo(pass) {
+        var x = (pass.match(/\d/g) || []).length
+        return x
     }
     var count = 1;
     var elem = document.getElementById("pass-one")
     elem.addEventListener("keypress", () => {
-
+        let y = 0
         count++;
-        if ((count > 8) && ((hasNumber(elem.value)))) {
+        y = hasNumbertwo(elem.value)
+        if ((count > 8) && (y >= 2)) {
             document.getElementById("validity").innerHTML = ("ok")
         }
+
+
     })
+    console.log(elem.value)
 })();

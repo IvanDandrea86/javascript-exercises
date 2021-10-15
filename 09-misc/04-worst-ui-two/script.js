@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var rangeInput = document.getElementById("slider").value;
+    var buttonInput = document.getElementById("btn");
+
+    if (buttonInput.addEventListener) {
+        buttonInput.addEventListener("click", testtest, false);
+    } else if (buttonInput.attachEvent) {
+        buttonInput.attachEvent('onclick', testtest);
+    }
+
+    function testtest(e) {
+        if (rangeInput > 0 && rangeInput < 5) {
+            alert("First");
+        } else {
+            alert("Second");
+        }
+    }
 })();

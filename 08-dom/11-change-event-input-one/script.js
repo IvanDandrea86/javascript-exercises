@@ -20,5 +20,4 @@
             elem.setAttributeNode(att);
         }
     })
-
 })();
