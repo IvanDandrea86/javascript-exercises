@@ -12,7 +12,7 @@
 (() => {
 
     function waveText(spans, max_const, min, increse) {
-        let max = (min + increse) * max_const
+        let max = (min + (max_const * increse))
         let val = min
         spans.forEach(elem => {
             let check = false
@@ -28,6 +28,8 @@
             }
         })
     }
+
+
 
     function addClass(target, _className) {
         target.forEach(elem => {
@@ -60,25 +62,28 @@
         text.innerHTML += "<span>" + (array[i].toLowerCase()) + "</span>"
     }
     const spans_ele = document.querySelectorAll(".material span")
+    var size = 18
+    var amp = 8
+    var freq = 5
+    waveText(spans_ele, freq, size, amp);
+    addId(spans_ele, "char")
 
-    waveText(spans_ele, 5, 16, 8);
 
-    // var j
-    // while (j < 1000) {
-    //     for (let i = 0; i < spans_ele.length; i++) {
-    //         let temp = spans_ele[i]
-    //         spans_ele[i] = spans_ele[i + 1]
-    //     }
-    //     j++
-    // }
-    // spans_ele.forEach(elem => {
-    //     addAttribute(elem, "style", "font-size: 12px")
-    // })
-    // spans_ele.forEach(elem => {
-    //     addAttribute(elem, "style", "font-size: 16px")
-    // })
+    var randomspeed = Math.floor(Math.random() * 10000) + 10
+    console.log(randomspeed)
 
-    // waveText(spans_ele, 5, 16, 8);
-    // addId(spans_ele, "char")
-    // addClass(spans_ele, "char")
+    var timer = setInterval(wave, randomspeed)
+
+
+    function wave() {
+        for (i = 0; i <= spans_ele.length; i++) {
+            var p = document.getElementById("char-" + i)
+            p.style.fontSize = size + amp
+            amp += amp
+        }
+        clearInterval(timer)
+    }
+
+
+
 })();

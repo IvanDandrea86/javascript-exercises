@@ -10,20 +10,76 @@
 // You will have time to focus on it later.
 
 (() => {
-    var rangeInput = document.getElementById("slider").value;
-    var buttonInput = document.getElementById("btn");
-
-    if (buttonInput.addEventListener) {
-        buttonInput.addEventListener("click", testtest, false);
-    } else if (buttonInput.attachEvent) {
-        buttonInput.attachEvent('onclick', testtest);
+    function getRandomArbitrary(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
     }
 
-    function testtest(e) {
-        if (rangeInput > 0 && rangeInput < 5) {
-            alert("First");
-        } else {
-            alert("Second");
+
+
+
+
+    var bt1 = document.getElementById("part-one")
+    var bt2 = document.getElementById("part-two")
+    var bt3 = document.getElementById("part-three")
+    var bt4 = document.getElementById("part-four")
+    var value = document.getElementById("target")
+
+    const performOperation = button => {
+        switch (button) {
+            case "part-one":
+                {
+                    let min = bt1.getAttribute("data-min")
+                    let max = bt1.getAttribute("data-max")
+                    let data = getRandomArbitrary(Number(min), Number(max))
+
+
+                    bt1.innerHTML = data.toString()
+
+                    break;
+                }
+
+            case "part-two":
+                {
+                    let min = bt2.getAttribute("data-min")
+                    let max = bt2.getAttribute("data-max")
+                    var data = getRandomArbitrary(Number(min), Number(max))
+
+                    bt2.innerHTML = data.toString()
+
+                    break;
+                }
+            case "part-three":
+                {
+                    let min = bt3.getAttribute("data-min")
+                    let max = bt3.getAttribute("data-max")
+                    var data = getRandomArbitrary(Number(min), Number(max))
+
+                    bt3.innerHTML = data.toString()
+
+                    break;
+                }
+            case "part-four":
+                {
+                    let min = bt4.getAttribute("data-min")
+                    let max = bt4.getAttribute("data-max")
+                    var data = getRandomArbitrary(Number(min), Number(max))
+
+                    bt4.innerHTML = data.toString()
+
+                    break;
+                }
+
         }
-    }
+
+        value.innerHTML = (bt1.innerHTML) + (bt2.innerHTML) + (bt3.innerHTML) + (bt4.innerHTML)
+    };
+
+
+    Array.from(document.querySelectorAll("button")).forEach($btn =>
+        $btn.addEventListener(
+            "click",
+            () => (performOperation($btn.id), false),
+        ),
+    );
+
 })();

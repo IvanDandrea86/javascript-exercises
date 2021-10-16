@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.getElementById("slider").addEventListener()
+
+    var range = document.getElementById("slider")
+    range.addEventListener("click", () => {
+        var num = document.getElementById("target")
+        var val = range.value
+        num.innerHTML = "+" + val
+    })
+
+
+
 })();
