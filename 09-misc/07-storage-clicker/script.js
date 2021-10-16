@@ -10,5 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var local=window.localStorage.getItem("counter")
+    console.log(local)
+    var count=local
+    document.getElementById("increment").addEventListener("click",()=>{
+        document.getElementById("target").innerHTML=count
+       count++ 
+       window.localStorage.setItem("counter",count)
+    })
 })();
