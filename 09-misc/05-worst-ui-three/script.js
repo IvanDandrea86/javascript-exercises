@@ -13,28 +13,9 @@
     function getRandomArbitrary(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
+    
 
-    function startSlot(b, i) {
-
-        b.removeEventListener("click", startSlot);
-
-        var slot1 = setInterval(function() {
-            // inp1 = document.getElementById("part-one")
-            let min = i.getAttribute("data-min")
-            let max = i.getAttribute("data-max")
-            console.log("Started");
-            random = getRandomArbitrary(Number(min), Number(max))
-            i.value = random.toString()
-            b.addEventListener("click", () => {
-                b.addEventListener("click", startSlot);
-                clearInterval(slot1)
-            });
-
-        }, 100);
-    }
-
-
-
+    
 
     var bt1 = document.getElementById("fix-part-one")
     var bt2 = document.getElementById("fix-part-two")
@@ -46,12 +27,80 @@
     var i4 = document.getElementById("part-four")
     var value = document.getElementById("target")
 
-    bt1.addEventListener("click", startSlot(bt1, i1));
-    // bt2.addEventListener("click", startSlot);
-    // bt3.addEventListener("click", startSlot);
-    // bt4.addEventListener("click", startSlot);
+    bt1.addEventListener("click", startSlot)
+
+    function startSlot() {
+        bt1.removeEventListener("click",startSlot)
+        var slot1 = setInterval(function() {
+        let min = i1.getAttribute("data-min")
+        let max = i1.getAttribute("data-max")
+        console.log("Started");
+        random = getRandomArbitrary(Number(min), Number(max))
+        i1.value = "+"+random.toString()
+        bt1.addEventListener("click", ()=>{
+            bt1.addEventListener("click", startSlot)
+            value.innerHTML = (i1.value) + (i2.value) + (i3.value) + (i4.value)
+            clearInterval(slot1)  
+        })
+        
+    }, 100);
+};
+    
+    bt2.addEventListener("click", startSlot2);
+    function startSlot2() {
+        bt2.removeEventListener("click",startSlot2)
+        var slot2 = setInterval(function() {
+        let min = i2.getAttribute("data-min")
+        let max = i2.getAttribute("data-max")
+        console.log("Started");
+        random = getRandomArbitrary(Number(min), Number(max))
+        i2.value = random.toString()
+
+        bt2.addEventListener("click", ()=>{
+            bt2.addEventListener("click", startSlot2)
+            value.innerHTML = (i1.value) + (i2.value) + (i3.value) + (i4.value)
+            clearInterval(slot2)  
+        })
+    }, 100);
+};
+    bt3.addEventListener("click", startSlot3);
+   
+    function startSlot3() {
+        bt3.removeEventListener("click",startSlot3)
+        var slot3 = setInterval(function() {
+        let min = i3.getAttribute("data-min")
+        let max = i3.getAttribute("data-max")
+        console.log("Started");
+        random = getRandomArbitrary(Number(min), Number(max))
+        i3.value = random.toString()
+
+        bt3.addEventListener("click", ()=>{
+            bt3.addEventListener("click", startSlot3)
+            value.innerHTML = (i1.value) + (i2.value) + (i3.value) + (i4.value)
+            clearInterval(slot3)  
+        })
+    }, 100);
+    };
+    bt4.addEventListener("click", startSlot4);
+    function startSlot4() {
+        bt4.removeEventListener("click",startSlot4)
+        var slot4 = setInterval(function() {
+        let min = i4.getAttribute("data-min")
+        let max = i4.getAttribute("data-max")
+        console.log("Started");
+        random = getRandomArbitrary(Number(min), Number(max))
+        i4.value = random.toString()
+
+        bt4.addEventListener("click", ()=>{
+            bt4.addEventListener("click", startSlot4)
+            value.innerHTML = (i1.value) + (i2.value) + (i3.value) + (i4.value)
+            clearInterval(slot4)  
+        })
+    }, 100);
+};
 
 
+console.log(value.innerHTML)
 
 
 

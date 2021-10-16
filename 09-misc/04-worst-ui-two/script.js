@@ -81,5 +81,5 @@
             () => (performOperation($btn.id), false),
         ),
     );
-
+            
 })();
