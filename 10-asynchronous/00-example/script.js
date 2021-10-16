@@ -22,9 +22,9 @@
         }
 
         intervals.push(setupIntervalMessage("one", 1000));
-        intervals.push(setupIntervalMessage("two", 1333));
-        intervals.push(setupIntervalMessage("three", 2500));
-        intervals.push(setupIntervalMessage("four", 5000));
-        intervals.push(setupIntervalMessage("five", 10000));
+        intervals.push(setupIntervalMessage("two", 2000));
+        // intervals.push(setupIntervalMessage("three", 2500));
+        // intervals.push(setupIntervalMessage("four", 5000));
+        // intervals.push(setupIntervalMessage("five", 10000));
     });
 })();
