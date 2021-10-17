@@ -12,13 +12,16 @@
 (() => {
     document.getElementById("run").addEventListener("click",()=>{
         window.lib.getPosts((error, articles) => {
-             articles.forEach((a)=>{a.comment=new Array()})
+            //  articles.forEach((a)=>{a.comment=new Array()})
             for (elem in articles){
                  let i= articles[elem].id
                  window.lib.getComments(i,(error,comments)=>{
+                     
+                    
                  articles[elem].comment=[...comments]
                  console.log(articles[elem]) 
                 })
+                
             }    
 })
     })
