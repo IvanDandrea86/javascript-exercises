@@ -10,5 +10,26 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    async function showPost(){
+        try{ 
+            await window.lib.getPosts()
+            
+            .then((articles)=>{
+                articles.forEach(element => {
+                    console.log( element)
+                })
+            
+            })
+        }
+        finally {console.log("Posts are printed")}
+
+    }
+
+    document.getElementById("run").addEventListener("click",()=>{
+             showPost()
+            
+
+
+            
+    })
 })();

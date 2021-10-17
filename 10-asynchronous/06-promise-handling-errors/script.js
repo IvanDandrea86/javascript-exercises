@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    document.getElementById("run").addEventListener("click",()=>{
+        window.lib.getPersons()
+        .then((result)=>{
+        return(console.log(result))
+            })
+         /*
+         you can remove this to see the default consol.error meassage
+         */    
+        .catch(()=>{console.log("An error occured")})
+})
 })();

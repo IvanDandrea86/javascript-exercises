@@ -10,5 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    async function showPerson(){
+        try{
+            await window.lib.getPersons()
+            .then((result)=>{
+               console.log(result)
+            })  
+        }
+        catch(error){
+            console.error(error)
+        }
+        finally{
+            console.log("showPerson() ended")
+        }
+    }
+    document.getElementById("run").addEventListener("click",()=>{
+        showPerson()
+    })
 })();

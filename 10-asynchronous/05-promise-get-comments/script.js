@@ -10,5 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click",()=>{
+        window.lib.getPosts()
+        .then((articles)=>{
+        for(elem in articles){
+            var id=articles[elem].id
+            window.lib.getComments(id)
+            .then((comments)=>{
+            articles[elem].comment=[...comments]
+            console.log(articles[elem]) 
+            elem--
+            })
+        }
+     })
+    })
 })();

@@ -10,5 +10,32 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    async function showPost(){
+        try{ 
+            await window.lib.getPosts()
+            
+            .then((articles)=>{
+                for(elem in articles){
+                    var id=articles[elem].id
+                     window.lib.getComments(id)
+                    .then((comments)=>{
+                    articles[elem].comment=[...comments]
+                    console.log(articles[elem]) 
+                    elem--
+                    })
+                }
+            })
+        }
+        catch {console.log("And error occured")}
+        finally {console.log("Posts are printed")}
+
+    }
+
+    document.getElementById("run").addEventListener("click",()=>{
+             showPost()
+             
+
+
+            
+    })
 })();
